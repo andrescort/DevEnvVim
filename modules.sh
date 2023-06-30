@@ -45,6 +45,7 @@ editor_codes () {
 # Restore
 restore_files () {
     if [[ -d "$HOME/.vim" ]];then
+        mkdir $COMPLEMENTS_VIM/restore_files
         mv $HOME/.vim/ $COMPLEMENTS_VIM/restore_files/vim
     fi
     if [[ -e "$HOME/.vimrc" ]];then
