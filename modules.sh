@@ -35,13 +35,28 @@ editor_codes () {
     echo
     vim -c "helptags $HOME/.vim/pack/plugins/start/coc/doc/" -c "q"
     vim -c "packadd markdown-preview.nvim" -c "q"
+    # Install nerdTree
+    git clone https://github.com/preservim/nerdtree.git $DIR_PLUGINS/nerdtree
+    vim -u NONE -c "helptags $DIR_PLUGINS/nerdtree/doc" -c q
+    # Install vim-floaterm
+    git clone https://github.com/voldikss/vim-floaterm $DIR_PLUGINS/vim-floaterm
+}
 
+# Restore
+restore_files () {
+    if [[ -d "$HOME/.vim" ]];then
+        mv $HOME/.vim/ $COMPLEMENTS_VIM/restore_files/vim
+    fi
+    if [[ -e "$HOME/.vimrc" ]];then
+        mv $HOME/.vimrc $COMPLEMENTS_VIM/restore_files/vimrc
+    fi
+    ls $COMPLEMENTS_VIM
 }
 
 # Add vimrc and .vim
 add_files () {
-    mv $COMPLEMENTS_VIM/vimrc $HOME/.vimrc
-    mv $COMPLEMENTS_VIM/vim/* $HOME/.vim
+    cp -R $COMPLEMENTS_VIM/vim/ $HOME/.vim
+    cp $COMPLEMENTS_VIM/vimrc $HOME/.vimrc
 }
 
 # Install necessary modules for Markdown-Preview

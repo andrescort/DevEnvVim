@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/andbna/codes/DockerFiles/restapp/src/pages/Home'
+let g:netrw_dirhist_7='/home/andbna/codes/DockerFiles/desert_flask/app'
+let g:netrw_dirhist_6='/home/andbna/codes/DockerFiles/desert_flask/app/database'
+let g:netrw_dirhist_5='/home/andbna/codes/python/backend/flask-boilerplate/app/database'
+let g:netrw_dirhist_4='/home/andbna/codes/python/bots/WhatsBotFacade/bot/whatsapp_page/groups'
+let g:netrw_dirhist_3='/home/andbna/codes/python/bots/WhatsBotFacade/bot/webdriver'
+let g:netrw_dirhist_2='/home/andbna/codes/python/bots/whatsBot/bot'
+let g:netrw_dirhist_1='/home/andbna/codes/python/bots/whatsaBot/bot/pages'
+let g:netrw_dirhist_0='/home/andbna/codes/python/bots/whatsBot/bot'
+let g:netrw_dirhist_9='/home/andbna/codes/python/bots/whatsBot/bot/pages'

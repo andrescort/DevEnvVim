@@ -1,7 +1,6 @@
 " JavaScript
   " Fold
-  set foldmethod=marker
-  set foldmarker={,}
+  set foldmethod=indent
   "       INDENTACIÓN
   set shiftwidth=2
   set tabstop=2

@@ -17,15 +17,21 @@ main () {
     echo 
 #    lib_termux
     echo 
-    echo "### Configurando Editor (vim)"
+    echo "Respaldo"
+    restore_files
     echo 
-#    editor_codes
-    echo 
+    read
     echo "### Creando vimrc"
     echo 
-#    add_files
+    add_files
     echo 
-    echo ----
+    read
+    echo "### Configurando Editor (vim)"
+    echo 
+    editor_codes
+    echo 
+    read
+    echo "### config_markdown"
     config_markdown
 }
 

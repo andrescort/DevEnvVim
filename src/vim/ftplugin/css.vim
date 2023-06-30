@@ -1,11 +1,10 @@
-"
-"           FILETYPE CSS
-
-"           Fold
-    set foldmethod=syntax
-"           INDENTACIÓN
-    autocmd FileType css set shiftwidth=4 tabstop=4
-    let g:cssColorVimDoNotMessMyUpdatetime = 1
+" FILETYPE CSS
+  " Fold
+  set foldmethod=syntax
+  " INDENTACIÓN
+  set shiftwidth=2
+  set tabstop=2
+  let g:cssColorVimDoNotMessMyUpdatetime = 1
 
 
 
