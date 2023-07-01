@@ -35,9 +35,6 @@ editor_codes () {
     echo
     vim -c "helptags $HOME/.vim/pack/plugins/start/coc/doc/" -c "q"
     vim -c "packadd markdown-preview.nvim" -c "q"
-    # Install nerdTree
-    git clone https://github.com/preservim/nerdtree.git $DIR_PLUGINS/nerdtree
-    vim -u NONE -c "helptags $DIR_PLUGINS/nerdtree/doc" -c q
     # Install vim-floaterm
     git clone https://github.com/voldikss/vim-floaterm $DIR_PLUGINS/vim-floaterm
 }

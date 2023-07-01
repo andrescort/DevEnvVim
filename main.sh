@@ -20,20 +20,16 @@ main () {
     echo "Respaldo"
     restore_files
     echo 
-    read
     echo "### Creando vimrc"
     echo 
     add_files
     echo 
-    read
     echo "### Configurando Editor (vim)"
     echo 
     editor_codes
     echo 
-    read
     echo "### config_markdown"
     config_markdown
 }
 
 main
-

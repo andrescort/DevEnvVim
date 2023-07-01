@@ -1,0 +1,36 @@
+{
+  // Python Jedi
+  "jedi.enable": true,
+  "jedi.startupMessage": false,
+  "jedi.markupKindPreferred": "plaintext",
+
+  // Explore
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.keyMapping": {
+          "<CR>": ["expandable?", "expand", "open"],
+          "V": "open:vsplit"
+  },
+
+  // config tssercer
+  "tsserver.enable": true,
+
+  // Dockerfile
+  "docker.enable": true,
+
+  // css && scss
+  "css.format.enable": true,
+  "scss.format.enable": true,
+
+  // html
+  "html.format.enable": true,
+
+  // coc-json
+  "json.enable": true,
+
+  // coc-
+  "symbol-line.default": "%f",
+  "symbol-line.icons": true
+  
+}
