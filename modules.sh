@@ -20,7 +20,7 @@ lib_termux () {
 lib_system () {
     sudo apt update \
         && sudo apt upgrade \
-        && sudo apt install vim nodejs 
+        && sudo apt install vim nodejs npm
 }
 
 # Installation and configuration of Vim8+ plugins
@@ -61,5 +61,5 @@ add_files () {
 config_markdown () {
     # cd ~/.vim/pack/plugins/start/markdown-preview &&
     echo "Fichero creado" # >> test.txt.txt
-            # npm install
+    npm i --prefix $DIR_PLUGINS/markdown-preview
 }
