@@ -10,12 +10,7 @@
 . modules.sh
 
 
-# Main
 main () {
-    echo ----
-    echo "### Instalando librerias necesarias"
-#    lib_termux
-    echo 
     echo "Respaldo"
     echo 
     restore_files
@@ -24,10 +19,10 @@ main () {
     add_files
     echo "### Configurando Editor (vim)"
     echo 
-    editor_codes
+    install_vim_plugins
     echo "### config_markdown"
     echo 
-    config_markdown
+    configure_markdown
 }
 
 main

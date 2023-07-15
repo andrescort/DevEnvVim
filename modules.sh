@@ -1,46 +1,44 @@
 #!/bin/bash
 
-# # # # # # # # # # # # # # # # # # # #
-#                                     #
-# Create programming environment      #
-#                                     #
-# # # # # # # # # # # # # # # # # # # #
-
 DIR_PLUGINS=$HOME/.vim/pack/plugins/start
 COMPLEMENTS_VIM=./src
 
-# Library necessary for thermux
-lib_termux () {
+# Install necessary libraries for Termux
+install_termux_libraries ()
+{
     pkg update -y \
         && pkg upgrade -y \
         && pkg in vim git nodejs -y
 }
 
-# Necessary libraries debian
-lib_system () {
+# Install necessary libraries for Debian-based systems
+install_debian_libraries ()
+{
     sudo apt update \
         && sudo apt upgrade \
         && sudo apt install vim nodejs npm
 }
 
 # Installation and configuration of Vim8+ plugins
-editor_codes () {
+install_vim_plugins ()
+{
     mkdir -p $DIR_PLUGINS
     # Install markdown-preview
     git clone https://github.com/iamcco/markdown-preview.nvim.git $DIR_PLUGINS/markdown-preview
     # Install tagbar
     git clone https://github.com/preservim/tagbar.git $DIR_PLUGINS/tagbar
     git clone --branch release https://github.com/neoclide/coc.nvim.git --depth=1  $DIR_PLUGINS/coc
-    echo "### Config vim"
+    echo "### Configurar Vim"
     echo
-    vim -c "helptags $HOME/.vim/pack/plugins/start/coc/doc/" -c "q"
-    vim -c "packadd markdown-preview.nvim" -c "q"
+    vim -c "helptags $HOME/.vim/pack/plugins/start/coc/doc/" -c "qa"
+    vim -c "packadd markdown-preview.nvim" -c "qa"
     # Install vim-floaterm
     git clone https://github.com/voldikss/vim-floaterm $DIR_PLUGINS/vim-floaterm
 }
 
-# Restore
-restore_files () {
+# Restore files
+restore_files ()
+{
     if [[ -d "$HOME/.vim" ]];then
         mkdir $COMPLEMENTS_VIM/restore_files
         mv $HOME/.vim/ $COMPLEMENTS_VIM/restore_files/vim
@@ -51,15 +49,16 @@ restore_files () {
     ls $COMPLEMENTS_VIM
 }
 
-# Add vimrc and .vim
-add_files () {
+# Add vimrc and .vim files
+add_files ()
+{
     cp -R $COMPLEMENTS_VIM/vim/ $HOME/.vim
     cp $COMPLEMENTS_VIM/vimrc $HOME/.vimrc
 }
 
 # Install necessary modules for Markdown-Preview
-config_markdown () {
-    # cd ~/.vim/pack/plugins/start/markdown-preview &&
-    echo "Fichero creado" # >> test.txt.txt
+configure_markdown ()
+{
+    echo "Fichero creado"
     npm i --prefix $DIR_PLUGINS/markdown-preview
 }
