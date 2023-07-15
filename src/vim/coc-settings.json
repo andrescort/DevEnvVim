@@ -4,24 +4,8 @@
   "jedi.startupMessage": false,
   "jedi.markupKindPreferred": "plaintext",
   "jedi.trace.server": "off",
-  "jedi.jediSettings.autoImportModules": [],
-  "jedi.jediSettings.caseInsensitiveCompletion": true,
   "jedi.jediSettings.debug": false,
-  "jedi.executable.args": [],
-  "jedi.codeAction.nameExtractFunction": "jls_extract_def",
-  "jedi.codeAction.nameExtractVariable": "jls_extract_var",
-  "jedi.completion.disableSnippets": false,
-  "jedi.completion.resolveEagerly": false,
-  "jedi.completion.ignorePatterns": [],
-  "jedi.diagnostics.enable": true,
-  "jedi.diagnostics.didOpen": true,
-  "jedi.diagnostics.didChange": true,
-  "jedi.diagnostics.didSave": true,
-  "jedi.hover.enable": true,
-  "jedi.hover.disable.keyword.all": false,
-  "jedi.hover.disable.keyword.names": [],
-  "jedi.hover.disable.keyword.fullNames": [],
-  "jedi.workspace.extraPaths": [],
+  "jedi.executable.command": "/home/andbna/.local/share/virtualenvs/jedi-server-K6IC_QzD/bin/jedi-language-server",
   "jedi.workspace.symbols.ignoreFolders": [
     ".nox",
     ".tox",
@@ -31,16 +15,99 @@
   ],
 
   // Explore
-  "explorer.width": 30,
+  "explorer.width": 25,
+  "explorer.file.showHiddenFiles": true,
   "explorer.icon.enableNerdfont": true,
-  "explorer.previewAction.onHover": false,
+  "explorer.previewAction.onHover": "labeling",
   "explorer.keyMapping": {
           "<CR>": ["expandable?", "expand", "open"],
           "V": "open:vsplit"
   },
+  "explorer.keyMappings.global": {
+    "i": false,
+    "<c-o>": "noop",
 
-  // config tssercer
+    "*": "toggleSelection",
+    "<tab>": "actionMenu",
+
+    "gk": ["wait", "expandablePrev"],
+    "gj": ["wait", "expandableNext"],
+    "h": ["wait", "collapse"],
+    "l": ["wait", "expandable?", "expand", "open"],
+    "J": ["wait", "toggleSelection", "normal:j"],
+    "K": ["wait", "toggleSelection", "normal:k"],
+    "gl": ["wait", "expand:recursive"],
+    "gh": ["wait", "collapse:recursive"],
+    "<2-LeftMouse>": [
+      "expandable?",
+      ["expanded?", "collapse", "expand"],
+      "open"
+    ],
+    "o": ["wait", "expanded?", "collapse", "expand"],
+    "<cr>": ["wait", "expandable?", "cd", "open"],
+    "e": "open",
+    "s": "open:split",
+    "E": "open:vsplit",
+    "t": "open:tab",
+    "<bs>": ["wait", "gotoParent"],
+    "gs": ["wait", "reveal:select"],
+    "il": "preview:labeling",
+    "ic": "preview:content",
+    "Il": "previewOnHover:toggle:labeling",
+    "Ic": "previewOnHover:toggle:content",
+    "II": "previewOnHover:disable",
+
+    "yp": "copyFilepath",
+    "yn": "copyFilename",
+    "yy": "copyFile",
+    "dd": "cutFile",
+    "p": "pasteFile",
+    "df": "delete",
+    "dF": "deleteForever",
+
+    "a": "addFile",
+    "A": "addDirectory",
+    "r": "rename",
+
+    "zh": "toggleHidden",
+    "g<dot>": "toggleHidden",
+    "R": "refresh",
+
+    "?": "help",
+    "q": "quit",
+    "<esc>": "esc",
+    "X": "systemExecute",
+    "gd": "listDrive",
+
+    "f": "search",
+    "F": "searchRecursive",
+
+    "gf": "gotoSource:file",
+    "gb": "gotoSource:buffer",
+
+    "[[": ["wait", "sourcePrev"],
+    "]]": ["wait", "sourceNext"],
+
+    "[i": ["wait", "indentPrev"],
+    "]i": ["wait", "indentNext"],
+
+    "[m": ["wait", "markPrev:modified"],
+    "]m": ["wait", "markNext:modified"],
+
+    "[d": ["wait", "markPrev:diagnosticError:diagnosticWarning"],
+    "]d": ["wait", "markNext:diagnosticError:diagnosticWarning"],
+    "[D": ["wait", "markPrev:diagnosticError"],
+    "]D": ["wait", "markNext:diagnosticError"],
+
+    "[c": ["wait", "markPrev:git"],
+    "]c": ["wait", "markNext:git"],
+    "<<": "gitStage",
+    ">>": "gitUnstage"
+  }
+
+  // config tsserver
   "tsserver.enable": true,
+  "tsserver.useLocalTsdk": true,
 
   // Dockerfile
   "docker.enable": true,
@@ -58,5 +125,4 @@
   // coc-
   "symbol-line.default": "%f",
   "symbol-line.icons": true
-  
 }

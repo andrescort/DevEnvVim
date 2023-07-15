@@ -5,5 +5,4 @@
   source $HOME/.vim/settings/status_bar.vim
   source $HOME/.vim/settings/scheme_color.vim
   source $HOME/.vim/settings/setting_coc.vim
-
-
+  source $HOME/.vim/settings/setting_floaterm.vim

@@ -1,7 +1,7 @@
 " ### ### ### -- COC -- ### ### ###
 "
 " Global Extencion
-  let g:coc_global_extensions = ['coc-css', 'coc-docker', 'coc-copilot', 'coc-explorer', 'coc-floaterm', 'coc-html', 'coc-json', 'coc-jedi', 'coc-markdownlint', 'coc-sql', 'coc-tsserver', 'coc-symbol-line', 'coc-sh']
+  let g:coc_global_extensions = ['coc-css', 'coc-docker', 'coc-copilot', 'coc-explorer', 'coc-floaterm', 'coc-html', 'coc-json', 'coc-jedi', 'coc-markdownlint', 'coc-sql', 'coc-tsserver', 'coc-symbol-line', 'coc-sh', 'coc-vimlsp']
 
 
   set nowritebackup
