@@ -23,6 +23,8 @@ main () {
     echo "### config_markdown"
     echo 
     configure_markdown
+    echo "## Instalalando y configurando jedi"
+    install_config_jedi
 }
 
 main

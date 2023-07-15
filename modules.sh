@@ -2,6 +2,7 @@
 
 DIR_PLUGINS=$HOME/.vim/pack/plugins/start
 COMPLEMENTS_VIM=./src
+VM_JEDI=$HOME/.local/lib/jedi-server
 
 # Install necessary libraries for Termux
 install_termux_libraries ()
@@ -36,6 +37,14 @@ install_vim_plugins ()
     git clone https://github.com/voldikss/vim-floaterm $DIR_PLUGINS/vim-floaterm
 }
 
+# Install and configure Jedi
+install_config_jedi()
+{
+    virtualenv $VM_JEDI
+    VIRTUAL_ENV=$VM_JEDI pipenv install jedi-language-server
+    rm Pipfile{,.lock}
+}
+
 # Restore files
 restore_files ()
 {
@@ -48,6 +57,7 @@ restore_files ()
     fi
     ls $COMPLEMENTS_VIM
 }
+
 
 # Add vimrc and .vim files
 add_files ()
