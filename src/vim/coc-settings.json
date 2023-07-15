@@ -5,7 +5,7 @@
   "jedi.markupKindPreferred": "plaintext",
   "jedi.trace.server": "off",
   "jedi.jediSettings.debug": false,
-  "jedi.executable.command": "/home/andbna/.local/share/virtualenvs/jedi-server-K6IC_QzD/bin/jedi-language-server",
+  "jedi.executable.command":i "jedi_command_path",
   "jedi.workspace.symbols.ignoreFolders": [
     ".nox",
     ".tox",

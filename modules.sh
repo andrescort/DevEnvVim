@@ -43,6 +43,7 @@ install_config_jedi()
     virtualenv $VM_JEDI
     VIRTUAL_ENV=$VM_JEDI pipenv install jedi-language-server
     rm Pipfile{,.lock}
+    sed -i 's|jedi_command_path|$HOME/.local/lib/jedi-server/bin/jedi-language-server|' $HOME/.vim/coc-settings.json
 }
 
 # Restore files
