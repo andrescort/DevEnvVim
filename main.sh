@@ -11,6 +11,8 @@
 
 
 main () {
+    echo "Instalando dependencias"
+    install_debian_libraries	
     echo "Respaldo"
     echo 
     restore_files
@@ -22,7 +24,7 @@ main () {
     install_vim_plugins
     echo "### config_markdown"
     echo 
-    configure_markdown
+    #configure_markdown
     echo "## Instalalando y configurando jedi"
     install_config_jedi
 }

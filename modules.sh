@@ -15,9 +15,11 @@ install_termux_libraries ()
 # Install necessary libraries for Debian-based systems
 install_debian_libraries ()
 {
-    sudo apt update \
-        && sudo apt upgrade \
-        && sudo apt install vim nodejs npm
+    if which sudo;then   
+        sudo apt update && sudo apt upgrade -y && sudo apt install vim nodejs npm -y
+    else
+        su -c 'apt update && apt upgrade -y && apt install vim nodejs npm -y'
+    fi
 }
 
 # Installation and configuration of Vim8+ plugins
@@ -25,14 +27,14 @@ install_vim_plugins ()
 {
     mkdir -p $DIR_PLUGINS
     # Install markdown-preview
-    git clone https://github.com/iamcco/markdown-preview.nvim.git $DIR_PLUGINS/markdown-preview
+    # git clone https://github.com/iamcco/markdown-preview.nvim.git $DIR_PLUGINS/markdown-preview
     # Install tagbar
     git clone https://github.com/preservim/tagbar.git $DIR_PLUGINS/tagbar
     git clone --branch release https://github.com/neoclide/coc.nvim.git --depth=1  $DIR_PLUGINS/coc
     echo "### Configurar Vim"
     echo
     vim -c "helptags $HOME/.vim/pack/plugins/start/coc/doc/" -c "qa"
-    vim -c "packadd markdown-preview.nvim" -c "qa"
+    # vim -c "packadd markdown-preview.nvim" -c "qa"
     # Install vim-floaterm
     git clone https://github.com/voldikss/vim-floaterm $DIR_PLUGINS/vim-floaterm
 }
@@ -41,8 +43,7 @@ install_vim_plugins ()
 install_config_jedi()
 {
     virtualenv $VM_JEDI
-    VIRTUAL_ENV=$VM_JEDI pipenv install jedi-language-server
-    rm Pipfile{,.lock}
+    $VM_JEDI/bin/pip install jedi-language-server
     sed -i 's|jedi_command_path|$HOME/.local/lib/jedi-server/bin/jedi-language-server|' $HOME/.vim/coc-settings.json
 }
 
