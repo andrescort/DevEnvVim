@@ -22,6 +22,16 @@ install_debian_libraries ()
     fi
 }
 
+install_arch_libraries ()
+{
+    if which sudo; then
+        sudo pacman -Syu && sudo pacman -S vim nodejs npm python-virtualenv -y
+    else
+        su -c 'pacman -Syu && pacman -S vim nodejs npm -y'
+    fi
+}
+
+
 # Installation and configuration of Vim8+ plugins
 install_vim_plugins ()
 {
