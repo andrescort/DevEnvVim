@@ -48,9 +48,9 @@ add_files ()
 
 install_termux_libraries ()
 {
-    pkg update -y \
-        && pkg upgrade -y \
-        && pkg in vim git nodejs -y
+    pkg update -y >/dev/null 2>&1 \
+        && pkg upgrade -y >/dev/null 2>&1 \
+        && pkg in vim git nodejs -y >/dev/null 2>&1
 }
 
 install_debian_libraries ()
@@ -66,10 +66,11 @@ install_debian_libraries ()
 
 install_arch_libraries ()
 {
-    if which sudo; then
-        sudo pacman -Syu && sudo pacman -S vim nodejs npm python-virtualenv ctags -y
+    if which sudo >/dev/null 2>&1; then
+        sudo pacman -Syu >/dev/null 2>&1 \
+            && sudo pacman -S vim nodejs npm python-virtualenv ctags -y >/dev/null 2>&1
     else
-        su -c 'pacman -Syu && pacman -S vim nodejs npm -y'
+        su -c 'pacman -Syu && pacman -S vim nodejs npm -y' >/dev/null 2>&1
     fi
 }
 
