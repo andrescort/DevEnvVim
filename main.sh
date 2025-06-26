@@ -11,24 +11,13 @@
 
 
 main () {
-    echo "Instalando dependencias"
-    # install_arch_libraries
-    # install_debian_libraries
-    # install_termux_libraries
-    echo "Respaldo"
-    echo 
-    restore_files
-    echo "### Creando vimrc"
-    echo 
-    add_files
-    echo "### Configurando Editor (vim)"
-    echo 
-    install_vim_plugins
-    echo "### config_markdown"
-    echo 
-    configure_markdown
-    echo "## Instalalando y configurando jedi"
-    install_config_jedi
+    show_step "Instalando dependencias" install_libraries
+    show_step "Creando Respaldo" restore_files
+    show_step "Configurando entorno completo de Vim" add_files
+    show_step "Instalando plugins" install_plugins
+    show_step "Configurando plugins" configs_plugins
+   echo -e "\n¡A codear!\n" 
 }
 
 main
+
