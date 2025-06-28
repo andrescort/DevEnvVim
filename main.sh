@@ -16,7 +16,7 @@ main () {
     show_step "Configurando entorno completo de Vim" add_files
     show_step "Instalando plugins" install_plugins
     show_step "Configurando plugins" configs_plugins
-   echo -e "\n¡A codear!\n" 
+    echo -e "\n¡A codear!\n" 
 }
 
 main
