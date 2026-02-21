@@ -1,3 +1,16 @@
+" Plugins
+call plug#begin()
+Plug 'loukotal/neopencode.nvim'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'olimorris/onedarkpro.nvim'
+Plug 'OXY2DEV/markview.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
+
+
 " TAGBAR
   nnoremap <leader>. :TagbarToggle<CR>
   let g:tagbar_autofocus = 1
